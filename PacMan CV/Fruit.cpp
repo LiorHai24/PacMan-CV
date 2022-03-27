@@ -6,7 +6,7 @@ void Fruit::move(int rows, int cols, bool NoColor)
 		gotoxy(bodyLocation.getx(), bodyLocation.gety());
 		if (!NoColor)
 			setTextColor(Color::WHITE);
-		cout << prevspace;
+		std::cout << prevspace;
 		bodyLocation.move(dir, rows, cols);
 		if (!NoColor)
 			setTextColor(color);

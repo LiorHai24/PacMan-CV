@@ -1,5 +1,4 @@
 #include "PacMan.h"
-
 Direction PacMan::getDirection(char key) const
 {
 	for (int i = 0; i < 5; i++)
@@ -15,7 +14,7 @@ void PacMan::move(int rows, int cols, bool NoColor)
 	if (dir != Direction::STAY)
 	{
 		gotoxy(bodyLocation.getx(), bodyLocation.gety());
-		cout << ' ';
+		std::cout << ' ';
 		bodyLocation.move(dir, rows, cols);
 		if (!NoColor)
 			setTextColor(color);
@@ -74,13 +73,13 @@ void PacMan::Animation(bool NoColor)
 {
 	for (int i = 0; i < 3; i++)//death animation
 	{
-		cout << ' ';
+		std::cout << ' ';
 		gotoxy(getLocation().getx(),getLocation().gety());
 		hideCursor();
 		Sleep(200);
 		if (!NoColor)
 			setTextColor(getColor());
-		cout << getbody();
+		std::cout << getbody();
 		gotoxy(getLocation().getx(), getLocation().gety());
 		hideCursor();
 		Sleep(200);
